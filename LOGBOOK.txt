@@ -1,0 +1,52 @@
+* Sharpening and clear the cache when loaded the Seikei Scanning System due to 
+to bottleneck database.
+* Finding the css for the scroll bar hidden in the css bootstrap 5 where also purposed
+the new way of finding using jquery and js.
+* Pagination understanding and adjustment to the system where the normal one quite not
+compatible with the UI.
+* Updating the slide to include and elaborate all the project done during the internship
+period and explaination.
+* Proposing the new UI look for better data view for the Seikei Scanning System where able to 
+view with time efficient to the body.
+
+* Learning Python by myself at the w3school and able to understand the python quickly and 
+can code the python.
+* Monitor the Seikei Scanning data by process where to check the data that
+unfamiliar.
+* Submit the presentation slide for the supervisor checking the update the notepad ++ and 
+comes out with failure.
+* Checking the slide for presentation tommorrow and to gain the supervisor check.
+* Update the report inside the e-penyeliaan.
+
+* Monitoring the Seikei Scanning System data and find out the data that unfamiliar which is 
+not in uppercase.
+* Investigate the data to be convert the data into the upper-case that automatically from the 
+read file code that from system.
+* Attending the visit meeting for the internship and greet to meeting all the lecturer and glad they
+happy with our progress.
+* Picture the session which is will become the memory of fcsit and able to comes out in the 
+memory.
+* Compile each day to do list and upadate the system by tommorrow and able to determined
+the end.
+
+* Creating the upper case converter for the Seikei Scanning System and able to convert the mini case 
+character into the upper case.
+* Wanted to upload my resume inside the system and unable to revise the resume because the 
+time was short.
+* Sampling the result and add the new filter for the system seikei and able to filter each of the 
+request from the process.
+* Finish update the filter and the addition of the date scan and proceed to maintenance the process
+request.
+* Continue to develop the delet function of the data record inside the system and to monitorize the 
+system inside the server.
+
+* Helping my intern mate to solve their problem and comes out with the solution with continuous development
+and maintenance from the code.
+* Helping other employee as well to assist with the code and which deal with the javascript and php and problem
+solving with both backend.
+* Monitor the record of the Seikei scanning to ensure the data reliable and follow the standard form of the 
+format.
+* Getting the new project from my supervisor which is for the Weighing System and able to design the first UI of the
+main menu.
+* Compile weekly report to upload inside the e-penyeliaan and able to complete the code with the short duration
+and report.
