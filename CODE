@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scanner System</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 700px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Animated Result Card */
+.top-card {
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: white;
+    background: linear-gradient(270deg, #4CAF50, #2196F3, #ff4d6d);
+    background-size: 600% 600%;
+    animation: gradientMove 8s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Card */
+.card {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Row */
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    gap: 10px;
+}
+
+/* Inputs */
+input, select {
+    width: 60%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+/* Colors */
+.input-blue { background: #e3f2fd; }
+.input-green { background: #e8f5e9; }
+.input-orange { background: #fff3e0; }
+
+input:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Button */
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #2196F3, #4CAF50);
+    color: white;
+    font-size: 16px;
+}
+
+/* Danger */
+.danger {
+    background: #ff4d6d;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+    }
+    input, select {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- RESULT -->
+    <div class="top-card">
+        <h2 id="displayLot">LOT: -</h2>
+        <h2 id="displayItem">Item: -</h2>
+        <h2 id="displayMachine">Machine: -</h2>
+        <h2 id="displayCoater">Coater: -</h2>
+    </div>
+
+    <!-- INPUT -->
+    <div class="card">
+
+        <!-- LOT (Scanner first) -->
+        <div class="row">
+            <div>LOT NO</div>
+            <input id="lot" class="input-blue" type="text" inputmode="none" autofocus>
+        </div>
+
+        <!-- ITEM -->
+        <div class="row">
+            <div>ITEM</div>
+            <select id="item" class="input-green">
+                <option value="">Select Item</option>
+                <option>CE TMK316AB7106KL-T</option>
+                <option>BL-CCG-D5100</option>
+                <option>15.0um Type</option>
+            </select>
+        </div>
+
+        <!-- MACHINE -->
+        <div class="row">
+            <div>MACHINE NO</div>
+            <input id="machine" class="input-green" type="text" inputmode="none">
+        </div>
+
+        <!-- COATER -->
+        <div class="row">
+            <div>DIE COATER NO</div>
+            <input id="coater" class="input-orange" type="text" inputmode="none">
+        </div>
+
+        <button onclick="evaluateData()">Evaluate</button>
+
+    </div>
+
+    <!-- INFO -->
+    <div class="card danger">
+        <div><strong>COVER WEIGHT STD:</strong> 0.450 ± 0.004</div>
+        <div><strong>RANGE:</strong> 0.446 – 0.454</div>
+    </div>
+
+</div>
+
+<script>
+// Auto move focus after scan (scanner sends ENTER)
+document.getElementById("lot").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        document.getElementById("machine").focus();
+    }
+});
+
+document.getElementById("machine").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        document.getElementById("coater").focus();
+    }
+});
+
+// Evaluate
+function evaluateData(){
+    const lot = document.getElementById("lot").value;
+    const item = document.getElementById("item").value;
+    const machine = document.getElementById("machine").value;
+    const coater = document.getElementById("coater").value;
+
+    document.getElementById("displayLot").innerText = "LOT: " + (lot || "-");
+    document.getElementById("displayItem").innerText = "Item: " + (item || "-");
+    document.getElementById("displayMachine").innerText = "Machine: " + (machine || "-");
+    document.getElementById("displayCoater").innerText = "Coater: " + (coater || "-");
+}
+
+// Always keep cursor ready for scan
+window.onload = () => {
+    document.getElementById("lot").focus();
+};
+</script>
+
+</body>
+</html>
